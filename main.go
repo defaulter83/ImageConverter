@@ -1,25 +1,10 @@
+/*
+Copyright © 2024 NAME HERE <EMAIL ADDRESS>
+*/
 package main
 
-import (
-	"fmt"
-)
+import "imageconverter/cmd"
 
 func main() {
-	imageURL := "https://example.com/image.jpg"
-	inputFilename := "input.jpg"
-	outputFilename := "output.png"
-
-	err := DownloadFile(imageURL, inputFilename)
-	if err != nil {
-		fmt.Println("Error downloading file:", err)
-		return
-	}
-
-	err = ConvertJPGtoPNG(inputFilename, outputFilename)
-	if err != nil {
-		fmt.Println("Error converting file:", err)
-		return
-	}
-
-	fmt.Println("Image successfully downloaded and converted to PNG")
+	cmd.Execute()
 }
