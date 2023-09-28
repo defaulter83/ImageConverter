@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -8,14 +9,14 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "imageConverter",
-	Short: "A simple image downloader and converter",
-	Long: `This application downloads a JPG image from a URL 
-and converts it to PNG format.`,
+	Short: "A simple image format converter",
+	Long:  `This application converts image files from one format to another by changing their extension.`,
 }
 
 func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {
+		fmt.Println(err)
 		os.Exit(1)
 	}
 }
